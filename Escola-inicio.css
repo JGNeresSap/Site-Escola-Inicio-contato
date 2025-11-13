@@ -117,8 +117,6 @@ body {
     gap: 20px;
     padding: 20px 5%;
     flex-wrap: wrap;
-    height: 50vh; 
-    overflow: auto;
 }
 .container-IdebEscolar,.container-intercambio,.container-plataformas {
     background-color: #222222;
@@ -219,3 +217,4 @@ hr {
     height: 2px;
     background: linear-gradient(to right, transparent, #ffbb00, transparent);
 }
+
