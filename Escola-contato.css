@@ -1,4 +1,3 @@
-
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +5,11 @@
 }
 
 body {
-    font-family: 'Inter', sans-serif;
-    background-color: var(--bg-primary);
-    color: var(--text-primary);
-    line-height: 1.6;
-    padding-top: var(--nav-height);
-}
-
-:root {
-  --bg-primary: #ffffff;
-  --bg-secondary: #222222;
-  --text-primary: #000000;
-  --text-on-secondary: #ffffff;
-  --color-accent: #ffdd00;
-  --text-muted: #555555;
-  --border-light: #dddddd;
-}
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    font-family: "Montserrat", Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    scroll-behavior: smooth;
 }
 
 .navbar {
@@ -107,113 +89,90 @@ body {
     transform: scale(0.95);
 }
 
-.container-escola,
-.container-IdebEscolar,
-.container-trofeus,
-.container-intercambio {
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-    gap: 20px;
-    padding: 20px 5%;
-    flex-wrap: wrap;
-}
-.container-IdebEscolar,.container-intercambio,.container-plataformas {
-    background-color: #222222;
-    color: #ffffff;
-}
-.img-escola,
-.img-ideb,
-.img-trofeus,
-.img-intercambio {
-    width: 28em;
-    border-radius: 12px;
-    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.25);
-    transition: transform 0.3s ease;
+.contato-img {
+  position: relative;
+  background-image: url("/SiteEscola/Captura de tela 2025-09-30 174027.png");
+  background-size: cover;
+  background-position: center;
+  width: 100%;
+  height: 35vh;
+  overflow: hidden; 
 }
 
-.img-escola:hover,
-.img-ideb:hover,
-.img-trofeus:hover,
-.img-intercambio:hover {
-    transform: scale(1.03);
+.contato-img::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(6px);
+  background-color: rgba(0, 0, 0, 0.3); 
 }
 
-.info-txt,
-.ideb-txt,
-.trofeus-txt,
-.intercambio-txt {
-    font-size: 26px;
-    text-align: justify;
-    width: 35%;
+.contato-img h2 {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 60px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1; /* fica acima do blur */
+}
+.contato-img h3 {
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 24px;
+  font-weight: bold;
+  color: white;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+  z-index: 1; 
+}
+.contato {
+  background: #ffffff;
+  height: 56.5vh;
+  text-align: center;
+  padding: 40px 20px;
 }
 
-.premiacoes-txt,
-.plataformas-txt {
-    font-size: 26px;
-    margin: 35px auto;
-    width: 35%;
-    text-align: center;
+.contato form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 500px;
+  margin: auto;
 }
-.container-premiacoes {
-    display: flex;
-    justify-content: center;
-    margin-top: 20px;
-    margin-bottom: 35px;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 20px;
+.contato h2{
+ margin-bottom: 50px;
+ font-size: 36px;
+ color: #ffbb00;
+ text-transform: uppercase;
+ letter-spacing: 2px;
 }
-
-.container-premiacoes img {
-    width: 300px;
-    height: 200px;
-    border-radius: 10px;
-    box-shadow: 0 6px 12px rgba(0,0,0,0.25);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.contato input, .contato textarea {
+  padding: 10px;
+  border: 2px solid #ffbb00;
+  border-radius: 8px;
+  background: #fff;
+  color: #000;
 }
 
-.container-premiacoes img:hover {
-    transform: scale(1.05);
-    box-shadow: 0 0 20px rgba(255,187,0,0.7);
+.contato button {
+  padding: 10px;
+  background: #ffbb00;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: 0.3s ease;
+  font-size: 20px;
 }
 
-.container-plataformas {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    row-gap: 10vh;
-    padding: 3%;
-    text-align: center;
-    gap: 20px;
-    
-}
-
-.container-plataformas a {
-    height: 20vh;
-}
-
-.container-plataformas img {
-    background-color: #f1f1f1;
-    width: 100%;
-    height: 20vh;
-    border-radius: 20px;
-    padding: 5%;
-    transition: 0.3s ease, box-shadow 0.3s ease;
-    object-fit: contain;
-    box-shadow: 4px 8px 12px rgba(0,0,0,0.2);
-}
-
-.container-plataformas img:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 25px rgba(255,187,0,0.8);
-    background-color: #fff3cd;
-}
-
-.container-plataformas img:active {
-    transform: scale(0.95);
-}
-hr {
-    border: none;
-    height: 2px;
-    background: linear-gradient(to right, transparent, #ffbb00, transparent);
+.contato button:hover {
+  background: #ff9100;
+  transition: 0.3s ease;
 }
